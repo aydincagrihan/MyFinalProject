@@ -3,6 +3,7 @@ using Core.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Entities.DTOs;
 
 namespace DataAccess.Abstract
 {/// <summary>
@@ -10,7 +11,7 @@ namespace DataAccess.Abstract
 /// </summary>
 	public interface IProductDal:IEntityRepository<Product>
 	{
-		
+	List<ProductDetailDto> GetProductDetails();
 
 	}
 }
