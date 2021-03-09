@@ -31,8 +31,8 @@ namespace WebAPI
 		{
 			//Autofac,Ninject,CastleWindsor-->IoC Cointer
 			services.AddControllers();
-			services.AddSingleton<IProductService, ProductManager>();//IOC
-			services.AddSingleton<IProductDal, EfProductDal>();
+			//services.AddSingleton<IProductService, ProductManager>();//IOC
+			//services.AddSingleton<IProductDal, EfProductDal>();
 
 
 

@@ -6,8 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
+using Core.CrossCuttingConcerns.Validation;
 using Entities.DTOs;
 using Core.Utilities.Results;
+using FluentValidation;
 
 namespace Business.Concrete
 {
@@ -25,13 +29,11 @@ namespace Business.Concrete
 			return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId));
 		}
 
+		[ValidationAspect(typeof(ProductValidator))]//Aspect(yön,görünüş) Eklendi
 		public IResult Add(Product product)
 		{
 
-			if (product.ProductName.Length < 2)
-			{
-				return new ErrorResult(Messages.ProductNameInvalid);
-			}
+			//Business Code Right Here!!
 
 			_productDal.Add(product);
 
@@ -68,5 +70,5 @@ namespace Business.Concrete
 	}
 }
 
-		
+
 
