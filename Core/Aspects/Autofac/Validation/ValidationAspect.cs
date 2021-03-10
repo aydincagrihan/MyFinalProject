@@ -10,6 +10,7 @@ using Core.CrossCuttingConcerns.Validation;
 
 namespace Core.Aspects.Autofac.Validation
 {
+	//Aspect-metodun başında ya da sonunda çalışacak olan yapıdır
 	public class ValidationAspect : MethodInterception
 	{
 		private Type _validatorType;
